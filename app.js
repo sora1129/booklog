@@ -6,8 +6,11 @@ app.use(express.json()) // jsonを使えるように指定する
 
 // 読書ログを記録する=/booklogにPOSTされる
 app.post('/booklog', (req, res) => {
+	// 保存したデータを受け取る処理
+	const booklog = req.body
 	res.json({
 		"ok": true,
+		"booklog": booklog
 	})
 })
 
